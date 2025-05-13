@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-mono;
+}
+
+@font-face {
+  font-family: 'Arial Hebrew';
+  src: local('Arial Hebrew'), local('ArialHebrew');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-black bg-white m-0 p-0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.header {
+  @apply fixed top-0 left-0 right-0 bg-white z-50 transition-all duration-300 ease-in-out;
+}
+
+.logo-text {
+  font-family: 'Arial Hebrew', Arial, sans-serif;
+  @apply text-base sm:text-lg md:text-xl text-black font-semibold hover:opacity-70 transition-opacity;
+}
+
+.burger-menu {
+  @apply fixed top-0 h-screen bg-white z-40 transform transition-all duration-300 ease-in-out shadow-lg;
+}
+
+.menu-item {
+  @apply py-4 px-6 sm:px-8 border-b border-gray-100 hover:bg-[rgb(20,83,45)] hover:bg-opacity-5 transition-colors duration-200;
+}
+
+.menu-link {
+  @apply text-black no-underline block font-sans;
+}
+
+.menu-link:hover {
+  @apply text-[rgb(20,83,45)];
+}
+
+.overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-30 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out;
+}
+
+.overlay.active {
+  @apply opacity-100 pointer-events-auto;
+}
+
+.menu-item {
+  @apply opacity-0 translate-x-4;
+  animation: menuItemAppear 0.3s forwards;
+  animation-delay: calc(var(--index) * 0.05s);
+}
+
+@keyframes menuItemAppear {
+  to {
+    @apply opacity-100 translate-x-0;
+  }
+}
