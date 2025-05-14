@@ -221,7 +221,7 @@ const ProductPage: React.FC = () => {
               </div>
 
               {/* Add to Cart Button */}
-              <button className="w-full py-3 sm:py-4 font-mono font-bold text-black border border-[#556b2f] bg-[#fafffb] hover:bg-[#556b2f] hover:text-white transition-colors duration-200 uppercase tracking-widest text-base sm:text-lg" style={{ minHeight: 48 }}>
+              <button className="w-full py-3 sm:py-4 font-mono font-bold text-white border border-[#556b2f] bg-[#556b2f] hover:bg-[#445429] hover:border-[#445429] transition-colors duration-200 uppercase tracking-widest text-base sm:text-lg" style={{ minHeight: 48 }}>
                 В корзину
               </button>
 
