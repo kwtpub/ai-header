@@ -204,22 +204,6 @@ const ProductPage: React.FC = () => {
                 )}
               </div>
 
-              {/* Color Selection */}
-              <div className="mb-6 sm:mb-8">
-                <h3 className="text-xs font-mono font-bold text-black mb-2">Цвет</h3>
-                <div className="flex gap-2 flex-wrap">
-                  {['Черный', 'Синий', 'Красный', 'Зеленый'].map((color) => (
-                    <button
-                      key={color}
-                      className="py-2 px-4 border border-[#e5e7eb] rounded-none font-mono font-medium text-black hover:bg-[#f3f4f6] transition-colors"
-                      style={{ fontSize: '1rem', minWidth: 44, minHeight: 44 }}
-                    >
-                      {color}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
               {/* Add to Cart Button */}
               <button className="w-full py-3 sm:py-4 font-mono font-bold text-white border border-[#556b2f] bg-[#556b2f] hover:bg-[#445429] hover:border-[#445429] transition-colors duration-200 uppercase tracking-widest text-base sm:text-lg" style={{ minHeight: 48 }}>
                 В корзину
