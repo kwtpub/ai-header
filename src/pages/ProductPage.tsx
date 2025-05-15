@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const ProductPage: React.FC = () => {
-  const [selectedSize, setSelectedSize] = useState<string>('');
+  const [selectedSize, setSelectedSize] = useState<string>(['XS', 'S', 'M', 'L', 'XL', 'XXL'][0]);
   const [isSizeOpen, setIsSizeOpen] = useState(false);
   const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -95,7 +95,8 @@ const ProductPage: React.FC = () => {
                   <h3 className="text-xs font-mono font-bold text-black">Размер</h3>
                   <button
                     onClick={() => setIsSizeGuideOpen(!isSizeGuideOpen)}
-                    className="text-xs font-mono font-bold text-[#556b2f] hover:text-[#445429] transition-colors"
+                    className="text-xs font-mono font-bold text-[#556b2f] hover:text-white border border-[#556b2f] px-3 py-1 rounded-none transition-colors bg-transparent hover:bg-[#556b2f] focus:outline-none focus:ring-2 focus:ring-[#556b2f] focus:ring-offset-2"
+                    style={{ fontWeight: 700 }}
                   >
                     Размерная сетка
                   </button>
@@ -105,7 +106,7 @@ const ProductPage: React.FC = () => {
                     onClick={() => setIsSizeOpen(!isSizeOpen)}
                     className="w-full py-3 px-4 bg-transparent border border-[#e5e7eb] rounded-none text-left font-mono font-medium flex justify-between items-center text-black"
                   >
-                    <span>{selectedSize || 'Выберите размер'}</span>
+                    <span>{selectedSize}</span>
                     <svg
                       className={`w-5 h-5 transform transition-transform ${isSizeOpen ? 'rotate-180' : ''}`}
                       fill="none"
