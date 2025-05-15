@@ -38,6 +38,13 @@ const AboutPage: React.FC = () => {
             ))}
           </div>
         </section>
+        <div className="w-full flex flex-col items-center mt-8 sm:mt-20">
+          <div className="w-full max-w-2xl border-t border-[#556b2f] pt-4 pb-7 sm:pt-8 sm:pb-14 bg-transparent">
+            <p className="text-center font-sans italic font-medium text-black text-xs xs:text-sm sm:text-lg tracking-wider select-none leading-snug break-words px-2">
+              Свобода. Инновации. Дисциплина.<br className="hidden xs:block" />Tyler Thompson — идти до конца.
+            </p>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
