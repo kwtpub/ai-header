@@ -41,8 +41,8 @@ const products: Product[] = [
 
 const Catalog: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+    <div className="container mx-auto px-2 py-6 sm:px-4 sm:py-8">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8">
         {products.map((product) => (
           <div key={product.id} className="group">
             <div className="relative overflow-hidden bg-white rounded-lg shadow-md">
@@ -53,14 +53,14 @@ const Catalog: React.FC = () => {
                   className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-3 md:p-4">
-                <h3 className="text-base md:text-md font-mono font-bold text-black mb-1 md:mb-2 truncate">
+              <div className="p-2 sm:p-3 md:p-4">
+                <h3 className="text-xs sm:text-base md:text-md font-mono font-bold text-black mb-1 sm:mb-2 truncate">
                   {product.name}
                 </h3>
-                <p className="text-xs md:text-sm font-mono text-black opacity-60 mb-2 md:mb-4 truncate">
+                <p className="text-[10px] sm:text-xs md:text-sm font-mono text-black opacity-60 mb-1 sm:mb-2 md:mb-4 truncate">
                   {product.category}
                 </p>
-                <span className="text-base md:text-md font-mono font-thin text-black">
+                <span className="text-xs sm:text-base md:text-md font-mono font-thin text-black">
                   {product.price}
                 </span>
               </div>

@@ -10,7 +10,7 @@ const CartPage: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-[#fafffb]">
       <Header />
       <main className="flex-grow pt-[65px]">
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-24 sm:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Cart Items Section */}
             <div>
