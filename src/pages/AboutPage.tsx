@@ -20,6 +20,41 @@ const aboutSections = [
   },
 ];
 
+const archiveProducts = [
+  {
+    id: 1,
+    name: 'Beta AR Jacket',
+    price: '45 000 ₽',
+    image: 'https://www.tradeinn.com/f/13686/136863479/arc-teryx-beta-ar-jacket.webp',
+    category: 'Куртки',
+    section: 'LAB',
+  },
+  {
+    id: 2,
+    name: 'Alpha SV Jacket',
+    price: '65 000 ₽',
+    image: 'https://peakstore.ru/upload/resize_cache/trk_iblock_img/674/917_917_1/6746aee5c5b4f347da80aea85796986e.jpg',
+    category: 'Куртки',
+    section: 'Инновации',
+  },
+  {
+    id: 3,
+    name: 'Gamma LT Hoody',
+    price: '35 000 ₽',
+    image: 'https://peakstore.ru/upload/resize_cache/trk_iblock_img/74c/917_917_1/74c58d0740b8c33594d295bae0405a42.jpg',
+    category: 'Куртки',
+    section: 'Материалы',
+  },
+  {
+    id: 4,
+    name: 'Gamma LT Hoody',
+    price: '35 000 ₽',
+    image: 'https://peakstore.ru/upload/resize_cache/trk_iblock_img/74c/917_917_1/74c58d0740b8c33594d295bae0405a42.jpg',
+    category: 'Куртки',
+    section: 'LAB',
+  },
+];
+
 const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#fafffb]">
@@ -33,7 +68,52 @@ const AboutPage: React.FC = () => {
               <div key={section.number} className="flex flex-col items-center text-center">
                 <span className="text-3xl xs:text-4xl sm:text-6xl font-mono font-bold text-[#556b2f] mb-1 sm:mb-2 select-none">{section.number}</span>
                 <h2 className="text-lg xs:text-xl sm:text-2xl font-mono font-bold text-black mb-2 sm:mb-3 uppercase tracking-wide">{section.title}</h2>
-                <p className="text-xs xs:text-sm sm:text-base font-mono text-black opacity-80 max-w-xs sm:max-w-md mx-auto leading-relaxed">{section.text}</p>
+                <p className="text-xs xs:text-sm sm:text-base font-mono text-black opacity-80 max-w-xs sm:max-w-md mx-auto leading-relaxed mb-4">{section.text}</p>
+                <div className="w-full">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
+                    {archiveProducts.filter((p) => p.section === section.title).map((product) => (
+                      <div key={product.id} className="group">
+                        <div className="relative overflow-hidden bg-white rounded-none border border-[#e5e7eb]">
+                          <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden">
+                            <img
+                              src={product.image}
+                              alt={product.name}
+                              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                          <div className="p-2 sm:p-3">
+                            <h3 className="text-xs sm:text-base font-mono font-bold text-black mb-1 truncate">{product.name}</h3>
+                            <p className="text-[10px] sm:text-xs font-mono text-black opacity-60 mb-1 truncate">{product.category}</p>
+                            <span className="text-xs sm:text-base font-mono font-thin text-black">{product.price}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="container mx-auto px-2 sm:px-4 pb-8 sm:pb-16">
+          <h2 className="text-xl sm:text-2xl font-mono font-bold text-black mb-6 sm:mb-10 text-center uppercase tracking-wide">Архив вещей</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+            {archiveProducts.map((product) => (
+              <div key={product.id} className="group">
+                <div className="relative overflow-hidden bg-white rounded-none border border-[#e5e7eb]">
+                  <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-2 sm:p-3">
+                    <h3 className="text-xs sm:text-base font-mono font-bold text-black mb-1 truncate">{product.name}</h3>
+                    <p className="text-[10px] sm:text-xs font-mono text-black opacity-60 mb-1 truncate">{product.category}</p>
+                    <span className="text-xs sm:text-base font-mono font-thin text-black">{product.price}</span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

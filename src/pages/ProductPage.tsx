@@ -101,7 +101,7 @@ const ProductPage: React.FC = () => {
                     Размерная сетка
                   </button>
                 </div>
-                <div className="relative">
+                <div className="relative mb-3">
                   <button
                     onClick={() => setIsSizeOpen(!isSizeOpen)}
                     className="w-full py-3 px-4 bg-transparent border border-[#e5e7eb] rounded-none text-left font-mono font-medium flex justify-between items-center text-black"
@@ -134,6 +134,14 @@ const ProductPage: React.FC = () => {
                     </div>
                   )}
                 </div>
+                <a
+                  href="https://t.me/USERNAME" // Заменить USERNAME на актуальный username бренда
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full mt-2 py-3 font-mono font-bold text-[#556b2f] border border-[#556b2f] bg-transparent hover:bg-[#556b2f] hover:text-white text-center transition-colors duration-200 rounded-none uppercase tracking-widest text-xs sm:text-sm"
+                >
+                  Подобрать размер в Telegram
+                </a>
 
                 {/* Size Guide Modal */}
                 {isSizeGuideOpen && (
