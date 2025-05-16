@@ -70,6 +70,7 @@ const AboutPage: React.FC = () => {
           </p>
         </section>
         <section className="container mx-auto px-2 sm:px-4 pb-8 sm:pb-16 flex flex-col items-center">
+          <h2 className="text-xl sm:text-2xl font-mono font-bold text-black mb-6 sm:mb-10 text-center uppercase tracking-wide">Архивные вещи</h2>
           <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 items-stretch bg-white">
             {/* Фото сверху на мобиле, слева на десктопе */}
             <div className="flex items-center justify-center bg-[#f3f4f6] order-1 md:order-none w-full">
@@ -85,7 +86,6 @@ const AboutPage: React.FC = () => {
               <div className="mb-4 text-center md:text-left">
                 <span className="block text-xs font-mono text-black opacity-60 mb-2">{archiveProducts[currentIndex].category}</span>
                 <h2 className="text-lg xs:text-xl sm:text-2xl font-mono font-bold text-black mb-2 uppercase tracking-wide">{archiveProducts[currentIndex].name}</h2>
-                <div className="text-lg xs:text-xl sm:text-2xl font-mono font-thin text-black mb-4">{archiveProducts[currentIndex].price}</div>
                 <p className="text-xs sm:text-sm font-mono text-black opacity-80 leading-relaxed">
                   Tyler Thompson — технологичная, функциональная и практичная одежда для тех, кто выбирает свободу и независимость. Мы создаём вещи для экстремальных условий, уделяя внимание деталям, инновациям и качеству.
                 </p>
@@ -112,13 +112,6 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </section>
-        <div className="w-full flex flex-col items-center mt-8 sm:mt-20">
-          <div className="w-full max-w-2xl border-t border-[#556b2f] pt-4 pb-7 sm:pt-8 sm:pb-14 bg-transparent">
-            <p className="text-center font-sans italic font-medium text-black text-xs xs:text-sm sm:text-lg tracking-wider select-none leading-snug break-words px-2">
-              Свобода. Инновации. Дисциплина.<br className="hidden xs:block" />Tyler Thompson — идти до конца.
-            </p>
-          </div>
-        </div>
       </main>
       <Footer />
     </div>
