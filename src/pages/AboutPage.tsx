@@ -1,22 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const aboutSections = [
   {
-    number: '01',
-    title: 'LAB',
-    text: 'Экспериментальное пространство, где рождаются новые формы, материалы и технологии. Всё тестируется и совершенствуется до идеала.',
+    title: 'Tyler Lab line',
+    text: 'Экспериментальные вещи прямиком из нашей лаборатории. Команда бренда уделяет особое внимание обработке тканей, поиску новых способов окрашивания. Одежда из данной линейки строго ограничена по количеству.',
   },
   {
-    number: '02',
-    title: 'Инновации',
-    text: 'Постоянный поиск новых решений, внедрение современных технологий обработки тканей и конструкций для максимального комфорта и защиты.',
+    title: 'Active line',
+    text: 'Одежда для диких условий. Ваши увлечения — в наших интересах. Делаем технологичную одежду, чтобы быть заряженными покорить любую высоту.',
   },
   {
-    number: '03',
-    title: 'Материалы',
-    text: 'Только лучшие мембраны, технические ткани и фурнитура. Всё проходит испытания в реальных условиях для гарантии надёжности.',
+    title: 'Classic line',
+    text: 'Классические вещи бренда, сочетающие технологичность и минимализм.',
   },
 ];
 
@@ -56,66 +53,63 @@ const archiveProducts = [
 ];
 
 const AboutPage: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const total = archiveProducts.length;
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % total);
+  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + total) % total);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#fafffb]">
       <Header />
       <main className="flex-grow pt-[65px]">
-        <section className="container mx-auto px-2 sm:px-4 py-6 sm:py-20 flex flex-col items-center">
-          <h1 className="text-2xl xs:text-3xl sm:text-5xl font-mono font-bold text-black text-center mb-3 sm:mb-4 uppercase tracking-tight">Tyler Thompson LAB</h1>
-          <div className="w-10 h-0.5 sm:w-16 sm:h-1 bg-[#556b2f] mb-8 sm:mb-20" />
-          <div className="flex flex-col gap-7 sm:gap-12 w-full max-w-2xl">
-            {aboutSections.map((section) => (
-              <div key={section.number} className="flex flex-col items-center text-center">
-                <span className="text-3xl xs:text-4xl sm:text-6xl font-mono font-bold text-[#556b2f] mb-1 sm:mb-2 select-none">{section.number}</span>
-                <h2 className="text-lg xs:text-xl sm:text-2xl font-mono font-bold text-black mb-2 sm:mb-3 uppercase tracking-wide">{section.title}</h2>
-                <p className="text-xs xs:text-sm sm:text-base font-mono text-black opacity-80 max-w-xs sm:max-w-md mx-auto leading-relaxed mb-4">{section.text}</p>
-                <div className="w-full">
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
-                    {archiveProducts.filter((p) => p.section === section.title).map((product) => (
-                      <div key={product.id} className="group">
-                        <div className="relative overflow-hidden bg-white rounded-none border border-[#e5e7eb]">
-                          <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden">
-                            <img
-                              src={product.image}
-                              alt={product.name}
-                              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                            />
-                          </div>
-                          <div className="p-2 sm:p-3">
-                            <h3 className="text-xs sm:text-base font-mono font-bold text-black mb-1 truncate">{product.name}</h3>
-                            <p className="text-[10px] sm:text-xs font-mono text-black opacity-60 mb-1 truncate">{product.category}</p>
-                            <span className="text-xs sm:text-base font-mono font-thin text-black">{product.price}</span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <section className="container mx-auto px-2 sm:px-4 py-8 sm:py-20 flex flex-col items-center">
+          <h1 className="text-2xl xs:text-3xl sm:text-5xl font-mono font-bold text-black text-center mb-4 uppercase tracking-tight">Tyler Thompson</h1>
+          <div className="w-10 h-0.5 sm:w-16 sm:h-1 bg-[#556b2f] mb-8" />
+          <p className="text-xs xs:text-sm sm:text-base font-mono text-black opacity-80 max-w-2xl mx-auto leading-relaxed text-center mb-10">
+            Tyler Thompson — технологичная, функциональная и практичная одежда для тех, кто выбирает свободу и независимость. Мы создаём вещи для экстремальных условий, уделяя внимание деталям, инновациям и качеству. Свобода. Инновации. Дисциплина. Tyler Thompson — идти до конца.
+          </p>
         </section>
-        <section className="container mx-auto px-2 sm:px-4 pb-8 sm:pb-16">
-          <h2 className="text-xl sm:text-2xl font-mono font-bold text-black mb-6 sm:mb-10 text-center uppercase tracking-wide">Архив вещей</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
-            {archiveProducts.map((product) => (
-              <div key={product.id} className="group">
-                <div className="relative overflow-hidden bg-white rounded-none border border-[#e5e7eb]">
-                  <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-2 sm:p-3">
-                    <h3 className="text-xs sm:text-base font-mono font-bold text-black mb-1 truncate">{product.name}</h3>
-                    <p className="text-[10px] sm:text-xs font-mono text-black opacity-60 mb-1 truncate">{product.category}</p>
-                    <span className="text-xs sm:text-base font-mono font-thin text-black">{product.price}</span>
-                  </div>
-                </div>
+        <section className="container mx-auto px-2 sm:px-4 pb-8 sm:pb-16 flex flex-col items-center">
+          <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 items-stretch bg-white">
+            {/* Фото сверху на мобиле, слева на десктопе */}
+            <div className="flex items-center justify-center bg-[#f3f4f6] order-1 md:order-none w-full">
+              <img
+                src={archiveProducts[currentIndex].image}
+                alt={archiveProducts[currentIndex].name}
+                className="w-full h-auto object-cover object-center select-none"
+                draggable={false}
+              />
+            </div>
+            {/* Текст снизу на мобиле, справа на десктопе */}
+            <div className="flex flex-col justify-center px-0 md:px-6 py-4 md:py-0 order-2 md:order-none">
+              <div className="mb-4 text-center md:text-left">
+                <span className="block text-xs font-mono text-black opacity-60 mb-2">{archiveProducts[currentIndex].category}</span>
+                <h2 className="text-lg xs:text-xl sm:text-2xl font-mono font-bold text-black mb-2 uppercase tracking-wide">{archiveProducts[currentIndex].name}</h2>
+                <div className="text-lg xs:text-xl sm:text-2xl font-mono font-thin text-black mb-4">{archiveProducts[currentIndex].price}</div>
+                <p className="text-xs sm:text-sm font-mono text-black opacity-80 leading-relaxed">
+                  Tyler Thompson — технологичная, функциональная и практичная одежда для тех, кто выбирает свободу и независимость. Мы создаём вещи для экстремальных условий, уделяя внимание деталям, инновациям и качеству.
+                </p>
               </div>
-            ))}
+              <div className="mt-4 md:mt-8 flex justify-center md:justify-start items-center">
+                <button
+                  onClick={prevSlide}
+                  className="inline-block mr-4 text-[#556b2f] font-mono font-bold text-lg hover:underline focus:outline-none"
+                  aria-label="Предыдущий"
+                >
+                  ←
+                </button>
+                <span className="font-mono text-xs sm:text-sm text-black opacity-70">
+                  {currentIndex + 1} of {total}
+                </span>
+                <button
+                  onClick={nextSlide}
+                  className="inline-block ml-4 text-[#556b2f] font-mono font-bold text-lg hover:underline focus:outline-none"
+                  aria-label="Следующий"
+                >
+                  →
+                </button>
+              </div>
+            </div>
           </div>
         </section>
         <div className="w-full flex flex-col items-center mt-8 sm:mt-20">
