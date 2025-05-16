@@ -134,16 +134,6 @@ const ProductPage: React.FC = () => {
                     </div>
                   )}
                 </div>
-                <a
-                  href="https://t.me/USERNAME" // Заменить USERNAME на актуальный username бренда
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full mt-2 py-3 font-mono font-bold text-[#556b2f] border border-[#556b2f] bg-transparent hover:bg-[#556b2f] hover:text-white text-center transition-colors duration-200 rounded-none uppercase tracking-widest text-xs sm:text-sm"
-                >
-                  Подобрать размер в Telegram
-                </a>
-
-                {/* Size Guide Modal */}
                 {isSizeGuideOpen && (
                   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-2">
                     <div className="bg-white rounded-none p-4 sm:p-6 max-w-2xl w-full mx-0 sm:mx-4 border border-[#e5e7eb]">
@@ -208,6 +198,14 @@ const ProductPage: React.FC = () => {
                           </tbody>
                         </table>
                       </div>
+                      <a
+                        href="https://t.me/USERNAME"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full mt-4 py-3 font-mono font-bold text-[#556b2f] border border-[#556b2f] bg-transparent hover:bg-[#556b2f] hover:text-white text-center transition-colors duration-200 rounded-none uppercase tracking-widest text-xs sm:text-sm"
+                      >
+                        Подобрать размер в Telegram
+                      </a>
                     </div>
                   </div>
                 )}
