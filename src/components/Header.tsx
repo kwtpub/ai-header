@@ -38,7 +38,6 @@ const HeaderVariant3: React.FC = () => {
   return (
     <>
       <header className={`header ${scrolled ? 'shadow-md' : ''}`}>
-        <div className="h-[2px] bg-[rgb(20,83,45)]" />
         <div className="max-w-[1920px] mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center h-full">
             <Logo variant="minimal" />

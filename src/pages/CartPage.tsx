@@ -121,7 +121,7 @@ const CartPage: React.FC = () => {
               </div>
               <button
                 type="submit"
-                className="w-full mt-4 py-3 font-mono font-bold text-black border border-[#556b2f] bg-[#fafffb] hover:bg-[#556b2f] hover:text-white transition-colors duration-200 uppercase tracking-widest"
+                className="w-full mt-4 py-3 font-mono font-bold text-white border border-[#556b2f] bg-[#556b2f] hover:bg-[#445429] hover:border-[#445429] transition-colors duration-200 uppercase tracking-widest"
               >
                 Оформить заказ
               </button>
